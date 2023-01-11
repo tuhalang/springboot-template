@@ -1,0 +1,10 @@
+dependencies {
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+tasks.named('bootJar') {
+    enabled = false
+}

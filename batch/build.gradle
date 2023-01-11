@@ -1,0 +1,11 @@
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+tasks.named("bootJar") {
+    mainClass = 'com.example.base.batch.BatchApplication'
+}

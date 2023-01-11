@@ -1,0 +1,34 @@
+spring:
+  profiles:
+    active: alpha
+
+
+app:
+  datasource:
+    a:
+      master:
+        jdbc-url: jdbc:mysql://127.0.0.1:4406/mydb?characterEncoding=utf8
+        username: mydb_user
+        password: mydb_pwd
+        minimum-idle: 30
+        maximum-pool-size: 30
+        connection-timeout: 2000
+        pool-name: master-pool
+      slave:
+        jdbc-url: jdbc:mysql://127.0.0.1:5506/mydb?characterEncoding=utf8
+        username: mydb_slave_user
+        password: mydb_slave_pwd
+        minimum-idle: 80
+        maximum-pool-size: 80
+        connection-timeout: 2000
+        read-only: true
+        pool-name: replica-pool
+    b:
+      jdbc-url: jdbc:mysql://127.0.0.1:5506/mydb?characterEncoding=utf8
+      username: mydb_slave_user
+      password: mydb_slave_pwd
+      minimum-idle: 80
+      maximum-pool-size: 80
+      connection-timeout: 2000
+      read-only: true
+      pool-name: replica-pool
