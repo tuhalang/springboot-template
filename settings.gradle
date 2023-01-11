@@ -1,0 +1,10 @@
+rootProject.name = 'base'
+
+include 'api'
+
+include 'common'
+include 'common:domain'
+include 'common:client'
+include 'common:utils'
+
+include 'batch'
